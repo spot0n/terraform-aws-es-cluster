@@ -26,6 +26,12 @@ variable "zone_id" {
   type        = string
 }
 
+variable "add_route53_records" {
+  default     = false
+  type        = bool
+  description = "Whether to add route53 records"
+}
+
 variable "access_policies" {
   default     = ""
   description = "IAM policy document specifying the access policies for the domain."
