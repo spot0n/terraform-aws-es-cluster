@@ -44,6 +44,7 @@ resource "aws_iam_service_linked_role" "default" {
   count            = var.create_iam_service_linked_role ? 1 : 0
   aws_service_name = "es.amazonaws.com"
   description      = "AWSServiceRoleForAmazonElasticsearchService Service-Linked Role"
+  custom_suffix    = var.iam_service_linked_role_custom_suffix
 }
 
 resource "aws_elasticsearch_domain" "es" {

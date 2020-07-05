@@ -20,6 +20,11 @@ variable "create_iam_service_linked_role" {
   default     = true
 }
 
+variable "iam_service_linked_role_custom_suffix" {
+  description = "Custom suffix for iam service linked role"
+  default = ""
+}
+
 variable "zone_id" {
   default     = ""
   description = "Route 53 zone id where the DNS record will be created."
