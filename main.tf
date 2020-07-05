@@ -43,8 +43,7 @@ resource "aws_security_group_rule" "egress_all" {
 resource "aws_iam_service_linked_role" "default" {
   count            = var.create_iam_service_linked_role ? 1 : 0
   aws_service_name = "es.amazonaws.com"
-  description      = "AWSServiceRoleForAmazonElasticsearchService Service-Linked Role"
-  custom_suffix    = var.iam_service_linked_role_custom_suffix
+  description      = "${var.aws_region}.${var.name} ES Linked Role"
 }
 
 resource "aws_elasticsearch_domain" "es" {

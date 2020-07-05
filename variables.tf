@@ -20,9 +20,8 @@ variable "create_iam_service_linked_role" {
   default     = true
 }
 
-variable "iam_service_linked_role_custom_suffix" {
-  description = "Custom suffix for iam service linked role"
-  default = ""
+variable "aws_region" {
+  description = "Region in which ES cluster is being created"
 }
 
 variable "zone_id" {
